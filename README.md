@@ -1,16 +1,30 @@
+# 💰 BillTracker – Personal Finance & Credit Management Platform
 
-# BillTracker
+**BillTracker** is a secure, full-featured personal finance platform that helps users manage bills, credit cards, and track expenses with real-time updates and a clean user experience.
 
-# React + Vite
+Built using **React**, **Node.js**, **Express**, and **PostgreSQL**, the app integrates authentication, analytics, reminders, and rewards in one cohesive system.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔒 Authentication & Security
+- Secure **JWT-based authentication**
+- Protected routes with role-based access
+- Session management and token refresh
 
-## Expanding the ESLint configuration
+### 📆 Bill & Credit Card Management
+- Track upcoming **bill due dates**
+- Add multiple **credit cards** with issuer metadata
+- Log and view **payment history**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📊 Finance Insights & Visualization
+- **Expense categorization** (food, travel, subscriptions, etc.)
+- **Calendar view** for due dates & transactions
+- **Interactive graphs** for spending patterns and trends
+- Generate and **download monthly financial statements (PDF)**
+
+### 🎁 Rewards & Coupons
+- Integrated **rewards system** for on-time payments and budgeting
+- **Coupon redemption** engine for eligible users
 
