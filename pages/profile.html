@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credify - Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script>
+  fetch('http://localhost:5000/api/check-auth', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  .then(res => {
+    if (!res.ok) {
+      window.location.href = 'index.html';
+    }
+  });
+  </script>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="credit-cards.html">Credit Cards</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="help-support.html">Help</a></li>
+      <li><a href="profile.html" class="active">Profile</a></li>
+    </ul>
+    <button id="logout-btn" class="login-btn">Logout</button>
+  </nav>
+  <main class="settings-main">
+    <div class="settings-sidebar">
+      <h2>Settings</h2>
+      <ul class="settings-nav">
+        <li><a href="#profile-settings" class="active">Profile</a></li>
+        <li><a href="#notifications-settings">Notifications</a></li>
+        <li><a href="#security-settings">Security</a></li>
+      </ul>
+    </div>
+    <div class="settings-content">
+      <!-- Profile Settings Section -->
+      <div id="profile-settings" class="settings-section active">
+        <h2>Profile Settings</h2>
+        <div class="profile-header">
+          <div class="profile-picture-wrapper">
+            <img id="profile-picture-preview" src="assets/user-placeholder.svg" alt="Profile Picture" class="profile-picture">
+          </div>
+          <div class="profile-actions">
+            <label for="profile-picture" class="btn-primary">Upload New
+              <input type="file" id="profile-picture" accept="image/*" style="display:none;">
+            </label>
+            <button id="delete-avatar-btn" class="btn-secondary">Delete Avatar</button>
+          </div>
+        </div>
+        <form id="profile-form" class="profile-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" readonly>
+            </div>
+            <div class="form-group">
+              <label for="phone_number">Mobile Number</label>
+              <input type="tel" id="phone_number" name="phone_number">
+            </div>
+          </div>
+          <button type="submit" class="auth-btn">Save Changes</button>
+        </form>
+      </div>
+
+      <!-- Notifications Settings Section -->
+      <div id="notifications-settings" class="settings-section">
+        <h2>Notification Preferences</h2>
+        <form id="notifications-form" class="profile-form">
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="notify_bills">
+              Enable Bill Reminders
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="notify_email">
+              Email Notifications
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="notify_sms">
+              SMS Notifications
+            </label>
+          </div>
+          <button type="submit" class="auth-btn">Save Preferences</button>
+        </form>
+      </div>
+
+      <!-- Security Settings Section -->
+      <div id="security-settings" class="settings-section">
+        <h2>Security Settings</h2>
+        <form id="password-form" class="profile-form">
+          <h3>Change Password</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="currentPassword">Current Password</label>
+              <input type="password" id="currentPassword" required>
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" id="newPassword" required>
+            </div>
+          </div>
+          <button type="submit" class="auth-btn">Change Password</button>
+        </form>
+        <hr>
+        <div class="danger-zone">
+          <h3>Delete Account</h3>
+          <p>Once you delete your account, there is no going back. Please be certain.</p>
+          <button id="delete-account-btn" class="auth-btn delete-btn">Delete My Account</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="landing-footer">
+    <p>&copy; 2024 Credify. All Rights Reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html> 
+</html> 

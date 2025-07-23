@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credify - Credit Cards</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> &gt;
+    <a href="credit-cards.html">Credit Cards</a> &gt;
+    <span>Manage Cards</span>
+  </nav>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="credit-cards.html" class="active">Credit Cards</a></li>
+      <li><a href="smart-insights.html">Insights</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="help-support.html">Help & Support</a></li>
+    </ul>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">← Back to Home</a>
+      <img src="assets/user-placeholder.svg" alt="User" class="user-avatar">
+      <span class="user-name">John Doe</span>
+    </div>
+  </nav>
+
+  <!-- Sidebar (desktop) -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">+ Add Card</a></li>
+      <li><a href="#">Pay Bill</a></li>
+      <li><a href="#">Insights</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <section class="credit-cards-module">
+      <div class="cards-header">
+        <h1>Credit Cards</h1>
+        <p>Manage your credit cards, view statements, and track spending patterns.</p>
+      </div>
+
+      <!-- Cards Overview -->
+      <div class="cards-overview">
+        <div class="card-item">
+          <div class="card-front">
+            <div class="card-header">
+              <span class="card-type">HDFC Bank</span>
+              <span class="card-status active">Active</span>
+            </div>
+            <div class="card-number">**** **** **** 1234</div>
+            <div class="card-details">
+              <span class="card-holder">JOHN DOE</span>
+              <span class="card-expiry">12/25</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="card-balance">
+              <span class="balance-label">Current Balance</span>
+              <span class="balance-amount">₹8,500</span>
+            </div>
+            <div class="card-limits">
+              <span>Credit Limit: ₹50,000</span>
+              <span>Available: ₹41,500</span>
+            </div>
+            <div class="card-actions">
+              <button class="pay-btn" data-card="hdfc">Pay Bill</button>
+              <button class="view-statement-btn" data-card="hdfc">View Statement</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-front">
+            <div class="card-header">
+              <span class="card-type">SBI Card</span>
+              <span class="card-status active">Active</span>
+            </div>
+            <div class="card-number">**** **** **** 5678</div>
+            <div class="card-details">
+              <span class="card-holder">JOHN DOE</span>
+              <span class="card-expiry">09/26</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="card-balance">
+              <span class="balance-label">Current Balance</span>
+              <span class="balance-amount">₹3,200</span>
+            </div>
+            <div class="card-limits">
+              <span>Credit Limit: ₹30,000</span>
+              <span>Available: ₹26,800</span>
+            </div>
+            <div class="card-actions">
+              <button class="pay-btn" data-card="sbi">Pay Bill</button>
+              <button class="view-statement-btn" data-card="sbi">View Statement</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction History -->
+      <div class="transactions-section">
+        <div class="section-header">
+          <h2>Recent Transactions</h2>
+          <div class="transaction-controls">
+            <input type="text" id="search-transactions" placeholder="Search transactions..." class="search-input">
+            <select id="filter-category" class="filter-select">
+              <option value="">All Categories</option>
+              <option value="food">Food & Dining</option>
+              <option value="shopping">Shopping</option>
+              <option value="transport">Transport</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="utilities">Utilities</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="transactions-table-container">
+          <table class="transactions-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Card</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="transactions-tbody">
+              <tr>
+                <td>2024-06-15</td>
+                <td>Amazon.in</td>
+                <td><span class="category-badge shopping">Shopping</span></td>
+                <td class="amount debit">-₹1,250</td>
+                <td>HDFC ****1234</td>
+                <td><span class="status completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td>2024-06-14</td>
+                <td>Swiggy</td>
+                <td><span class="category-badge food">Food & Dining</span></td>
+                <td class="amount debit">-₹450</td>
+                <td>SBI ****5678</td>
+                <td><span class="status completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td>2024-06-13</td>
+                <td>Uber</td>
+                <td><span class="category-badge transport">Transport</span></td>
+                <td class="amount debit">-₹180</td>
+                <td>HDFC ****1234</td>
+                <td><span class="status completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td>2024-06-12</td>
+                <td>Netflix</td>
+                <td><span class="category-badge entertainment">Entertainment</span></td>
+                <td class="amount debit">-₹499</td>
+                <td>SBI ****5678</td>
+                <td><span class="status completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td>2024-06-11</td>
+                <td>Reliance Fresh</td>
+                <td><span class="category-badge food">Food & Dining</span></td>
+                <td class="amount debit">-₹850</td>
+                <td>HDFC ****1234</td>
+                <td><span class="status completed">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Spending Insights -->
+      <div class="insights-section">
+        <h2>Spending Insights</h2>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <h3>Category Breakdown</h3>
+            <div class="category-chart">
+              <div class="chart-item">
+                <div class="chart-bar" style="height: 60%; background: #ef4444;"></div>
+                <span>Food & Dining</span>
+                <span class="percentage">35%</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="height: 40%; background: #3b82f6;"></div>
+                <span>Shopping</span>
+                <span class="percentage">25%</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="height: 30%; background: #10b981;"></div>
+                <span>Transport</span>
+                <span class="percentage">15%</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="height: 20%; background: #f59e0b;"></div>
+                <span>Entertainment</span>
+                <span class="percentage">10%</span>
+              </div>
+            </div>
+          </div>
+          <div class="insight-card">
+            <h3>Monthly Summary</h3>
+            <div class="summary-stats">
+              <div class="stat-item">
+                <span class="stat-label">Total Spent</span>
+                <span class="stat-value">₹3,229</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Transactions</span>
+                <span class="stat-value">5</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Avg. Transaction</span>
+                <span class="stat-value">₹646</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="payment-modal" style="display:none;">
+    <div class="modal-content payment-modal">
+      <span class="close-modal" id="close-payment-modal">&times;</span>
+      <h2>Pay Credit Card Bill</h2>
+      <div class="payment-details">
+        <div class="card-info-payment">
+          <span id="payment-card-name">HDFC Bank</span>
+          <span id="payment-card-number">**** **** **** 1234</span>
+        </div>
+        <div class="payment-amounts">
+          <div class="amount-option">
+            <input type="radio" name="payment-type" id="minimum" value="minimum">
+            <label for="minimum">
+              <span class="amount-label">Minimum Amount Due</span>
+              <span class="amount-value" id="min-amount">₹850</span>
+            </label>
+          </div>
+          <div class="amount-option">
+            <input type="radio" name="payment-type" id="full" value="full" checked>
+            <label for="full">
+              <span class="amount-label">Full Amount</span>
+              <span class="amount-value" id="full-amount">₹8,500</span>
+            </label>
+          </div>
+          <div class="amount-option">
+            <input type="radio" name="payment-type" id="custom" value="custom">
+            <label for="custom">
+              <span class="amount-label">Custom Amount</span>
+              <input type="number" id="custom-amount" placeholder="Enter amount" min="1" max="8500">
+            </label>
+          </div>
+        </div>
+        <button class="process-payment-btn" id="process-payment">Process Payment</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 

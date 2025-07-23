@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Insights - Credify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> &gt;
+    <a href="credit-cards.html">Credit Cards</a> &gt;
+    <span>Smart Insights</span>
+  </nav>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <nav>
+      <ul class="navbar-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="credit-cards.html">My Cards</a></li>
+        <li><a href="bills.html">Bills</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="help-support.html">Help</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">Logout</a>
+      <img src="assets/user-placeholder.svg" alt="User" class="user-avatar">
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main-content insights-page">
+    <div class="insights-header">
+      <h1>Financial Insights</h1>
+      <p>Your complete financial picture, with smart suggestions to help you save.</p>
+      <div class="insights-period-filter">
+        <label for="insights-month-select">Showing data for:</label>
+        <select id="insights-month-select">
+          <!-- Options will be populated by JS -->
+        </select>
+        <select id="insights-year-select">
+          <!-- Options will be populated by JS -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Combined Monthly Overview -->
+    <section class="insight-section overview-section">
+      <div class="insight-card monthly-summary">
+        <h3>Monthly Spending</h3>
+        <p id="total-spending-amount">₹0.00</p>
+        <div class="budget-tracker">
+          <p>Budget Usage: <span id="budget-usage-text">0%</span></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="budget-progress-bar" style="width: 0%;"></div>
+          </div>
+          <p class="budget-info">Budget: <span id="budget-amount-text">₹50,000</span></p>
+        </div>
+      </div>
+      <div class="insight-card spending-breakdown-chart">
+        <h3>Spending Breakdown</h3>
+        <div class="chart-container">
+          <canvas id="spending-pie-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Comparison Chart -->
+    <section class="insight-section category-comparison-section">
+      <div class="section-header">
+        <h2>Category Comparison</h2>
+        <div class="toggle-buttons">
+          <button class="toggle-btn active" data-period="1m">This Month</button>
+          <button class="toggle-btn" data-period="3m">Last 3 Months</button>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="category-bar-chart"></canvas>
+      </div>
+    </section>
+
+    <div class="insights-grid">
+      <!-- Payment Timeliness & Streak Tracker -->
+      <section class="insight-section streak-tracker-section">
+        <h3>Payment Timeliness</h3>
+        <div class="streak-info">
+          <p>On-Time Payment Streak:</p>
+          <span id="streak-count">0</span>
+        </div>
+        <p class="streak-subtitle">30-Day Activity Heatmap</p>
+        <div class="heatmap-container" id="heatmap-container">
+          <!-- Heatmap will be generated here -->
+        </div>
+      </section>
+
+      <!-- Smart Suggestions -->
+      <section class="insight-section suggestions-section">
+        <h3>Smart Suggestions</h3>
+        <div class="suggestions-list" id="suggestions-list">
+          <!-- Suggestions will be populated here -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Rewards & Gamification -->
+    <section class="insight-section rewards-section">
+      <h2>Rewards & Unlocked Coupons</h2>
+      <div class="rewards-header">
+        <p>Your Points: <span id="user-points">0</span></p>
+      </div>
+      <div class="coupons-grid" id="coupons-grid">
+        <!-- Coupon cards will be populated here -->
+      </div>
+    </section>
+  </main>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 

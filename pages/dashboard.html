@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credify - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script>
+  fetch('http://localhost:5000/api/check-auth', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  .then(res => {
+    if (!res.ok) {
+      window.location.href = 'index.html';
+    }
+  });
+  </script>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="credit-cards.html">My Cards</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="help-support.html">Help</a></li>
+    </ul>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">← Back to Home</a>
+      <img src="assets/user-placeholder.svg" alt="User" class="user-avatar">
+      <span class="user-name">John Doe</span>
+    </div>
+    <button id="logout-btn" class="login-btn">Logout</button>
+  </nav>
+
+  <!-- Sidebar (desktop) -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">+ Add Bill</a></li>
+      <li><a href="#">Pay Card</a></li>
+      <li><a href="#">Insights</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+      <div class="dashboard-header">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="dashboard-grid">
+        <!-- Left column -->
+        <div class="dashboard-left">
+          <!-- Alerts -->
+          <div class="dashboard-alerts" id="dashboard-alerts">
+            <div class="alert alert-missed">⚠️ Missed Payment: Internet Bill</div>
+            <div class="alert alert-balance">🔔 Low Balance: Credit Card</div>
+          </div>
+          <!-- Upcoming Bills -->
+          <div class="dashboard-section">
+            <h2>Upcoming Bills</h2>
+            <ul class="bills-list">
+              <li>Electricity - <span>₹1,200</span> <span class="due-date">Due: 10th Jul</span></li>
+              <li>Rent - <span>₹15,000</span> <span class="due-date">Due: 1st Jul</span></li>
+              <li>Netflix - <span>₹499</span> <span class="due-date">Due: 5th Jul</span></li>
+            </ul>
+          </div>
+          <!-- Credit Card Dues -->
+          <div class="dashboard-section">
+            <h2>Credit Card Dues</h2>
+            <ul class="card-dues-list">
+              <li>HDFC Card - <span>₹8,500</span> <span class="due-date">Due: 12th Jul</span></li>
+              <li>SBI Card - <span>₹3,200</span> <span class="due-date">Due: 20th Jul</span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Right column -->
+        <div class="dashboard-right">
+          <!-- Bar Chart -->
+          <div class="dashboard-section">
+            <h2>Spending This Month</h2>
+            <div id="bar-chart" class="chart-placeholder">
+              <svg width="220" height="120"><rect x="20" y="60" width="30" height="50" fill="#2563eb"/><rect x="70" y="40" width="30" height="70" fill="#60a5fa"/><rect x="120" y="80" width="30" height="30" fill="#2563eb"/><rect x="170" y="30" width="30" height="80" fill="#60a5fa"/></svg>
+            </div>
+          </div>
+          <!-- Pie Chart -->
+          <div class="dashboard-section">
+            <h2>Spending Categories</h2>
+            <div id="pie-chart" class="chart-placeholder">
+              <svg width="120" height="120" viewBox="0 0 32 32"><circle r="16" cx="16" cy="16" fill="#e5e7eb"/><path d="M16 16 L16 0 A16 16 0 0 1 31.9 18.2 Z" fill="#2563eb"/><path d="M16 16 L31.9 18.2 A16 16 0 0 1 8 30 Z" fill="#60a5fa"/><path d="M16 16 L8 30 A16 16 0 0 1 16 0 Z" fill="#fbbf24"/></svg>
+            </div>
+          </div>
+          <!-- Calendar Snippet -->
+          <div class="dashboard-section">
+            <h2>Upcoming Payments</h2>
+            <div class="calendar-snippet" id="calendar-snippet">
+              <table>
+                <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+                <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                <tr><td>6</td><td>7</td><td>8</td><td>9</td><td class="due">10</td><td>11</td><td>12</td></tr>
+                <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html> 

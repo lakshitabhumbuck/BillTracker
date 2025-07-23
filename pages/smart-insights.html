@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Insights - Credify</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> &gt;
+    <a href="credit-cards.html">Credit Cards</a> &gt;
+    <span>Smart Insights</span>
+  </nav>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="credit-cards.html" class="active">Credit Cards</a></li>
+      <li><a href="smart-insights.html" class="active">Insights</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="help-support.html">Help & Support</a></li>
+    </ul>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <section class="insights-module">
+      <div class="insights-header">
+        <h1>Smart Statements</h1>
+        <p>An intelligent breakdown of your spending habits.</p>
+      </div>
+      
+      <!-- Month/Year Filter -->
+      <div class="insights-filters">
+        <div class="filter-group">
+          <label for="insights-year">Year:</label>
+          <select id="insights-year">
+            <option value="2025">2025</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="insights-month">Month:</label>
+          <select id="insights-month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+          </select>
+        </div>
+        <button id="update-insights-btn" class="update-btn">Update Charts</button>
+      </div>
+      
+      <div class="charts-container">
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Spending on basis of category.</h3>
+          <div class="pie-chart-container" id="category-pie-chart">
+             <!-- Pie chart will be rendered here -->
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Spending on basis of vendor.</h3>
+          <div class="pie-chart-container" id="vendor-pie-chart">
+            <!-- Pie chart will be rendered here -->
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Count for each category.</h3>
+          <div class="bar-chart-container" id="category-bar-chart">
+            <!-- Bar chart will be rendered here -->
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Count for each vendor.</h3>
+          <div class="bar-chart-container" id="vendor-bar-chart">
+            <!-- Bar chart will be rendered here -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 

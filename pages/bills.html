@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credify - Bills</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script>
+  fetch('http://localhost:5000/api/check-auth', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  .then(res => {
+    if (!res.ok) {
+      window.location.href = 'index.html';
+    }
+  });
+  </script>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="credit-cards.html">My Cards</a></li>
+      <li><a href="bills.html" class="active">Bills</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="help-support.html">Help</a></li>
+    </ul>
+    <div class="navbar-user">
+      <img src="assets/user-placeholder.svg" alt="User" class="user-avatar">
+      <span class="user-name">John Doe</span>
+    </div>
+  </nav>
+
+  <!-- Sidebar (desktop) -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">+ Add Bill</a></li>
+      <li><a href="#">Pay Card</a></li>
+      <li><a href="#">Insights</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <section class="bills-module">
+      <div class="bills-header">
+        <h1>Bills & Payments</h1>
+        <p>Manage your upcoming and paid bills all in one place.</p>
+      </div>
+      <div class="bills-controls">
+        <div class="bills-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+          <button class="filter-btn" data-filter="paid">Paid</button>
+          <button class="filter-btn" data-filter="unpaid">Unpaid</button>
+        </div>
+        <div class="bills-view-toggle">
+          <button class="view-btn active" data-view="list"><i class="fas fa-list"></i> List View</button>
+          <button class="view-btn" data-view="calendar"><i class="fas fa-calendar-alt"></i> Calendar View</button>
+        </div>
+        <button class="add-bill-btn" id="add-bill-btn">+ Add Bill</button>
+      </div>
+      <div class="bills-list-container" id="bills-list-container">
+        <div class="bills-grid" id="bills-grid">
+          <!-- Bill cards will be dynamically inserted here -->
+        </div>
+      </div>
+      <!-- Calendar View (initially hidden by JS) -->
+      <div class="bills-calendar-container" id="bills-calendar-container">
+        <div class="calendar-header">
+          <button id="prev-month-btn">&lt;</button>
+          <h3 id="month-year"></h3>
+          <button id="next-month-btn">&gt;</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid">
+          <!-- Calendar will be dynamically generated here -->
+        </div>
+      </div>
+      <!-- Add/Edit Bill Modal (hidden by default) -->
+      <div class="modal" id="bill-modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close-modal" id="close-bill-modal">&times;</span>
+          <h2 id="modal-title">Add Bill</h2>
+          <form id="bill-form">
+            <label>Category
+              <select name="category" required>
+                <option value="">Select</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Rent">Rent</option>
+                <option value="Internet">Internet</option>
+                <option value="Subscriptions">Subscriptions</option>
+              </select>
+            </label>
+            <label>Name
+              <input type="text" name="name" required />
+            </label>
+            <label>Amount
+              <input type="number" name="amount" min="1" required />
+            </label>
+            <label>Due Date
+              <input type="date" name="dueDate" required />
+            </label>
+            <label>Status
+              <select name="status" required>
+                <option value="Unpaid">Unpaid</option>
+                <option value="Paid">Paid</option>
+              </select>
+            </label>
+            <button type="submit" class="save-bill-btn">Save</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 

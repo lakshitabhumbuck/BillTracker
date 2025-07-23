@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credify - Credit Cards Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script>
+  fetch('http://localhost:5000/api/check-auth', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  .then(res => {
+    if (!res.ok) {
+      window.location.href = 'index.html';
+    }
+  });
+  </script>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="credit-cards.html" class="active">My Cards</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="help-support.html">Help</a></li>
+    </ul>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">← Back to Home</a>
+      <img src="assets/user-placeholder.svg" alt="User" class="user-avatar">
+      <span class="user-name">John Doe</span>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <section class="hub-module">
+      <div class="hub-header">
+        <h1>Credit Card Center</h1>
+        <p>Your central hub for managing cards, analyzing spending, and viewing statements.</p>
+      </div>
+      <div class="hub-grid">
+        <a href="manage-cards.html" class="hub-card">
+          <div class="hub-card-icon">💳</div>
+          <h3>Manage Cards</h3>
+          <p>View your existing cards, check balances, and pay bills.</p>
+        </a>
+        <a href="add-card.html" class="hub-card">
+          <div class="hub-card-icon">➕</div>
+          <h3>Add a New Card</h3>
+          <p>Securely add a new credit card to your portfolio.</p>
+        </a>
+        <a href="view-statements.html" class="hub-card">
+          <div class="hub-card-icon">📄</div>
+          <h3>View Statements</h3>
+          <p>Access and filter your monthly and yearly transaction history.</p>
+        </a>
+        <a href="smart-insights.html" class="hub-card">
+          <div class="hub-card-icon">📊</div>
+          <h3>Smart Insights</h3>
+          <p>Visualize your spending habits with interactive charts.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html> 

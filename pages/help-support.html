@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Support - Credify</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> &gt;
+    <span>Help & Support</span>
+  </nav>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="credit-cards.html">My Cards</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="help-support.html" class="active">Help</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <section class="help-support-module">
+      <div class="help-header">
+        <h1>Help & Support</h1>
+        <p>Get help with Credify and manage your finances better.</p>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <div class="action-card">
+          <i class="fas fa-robot"></i>
+          <h3>AI Assistant</h3>
+          <p>Chat with our smart assistant for instant help</p>
+          <button id="open-chat-btn" class="action-btn">Start Chat</button>
+        </div>
+        <div class="action-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Contact Us</h3>
+          <p>Send us a message and we'll get back to you</p>
+          <button id="contact-form-btn" class="action-btn">Send Message</button>
+        </div>
+        <div class="action-card">
+          <i class="fas fa-book"></i>
+          <h3>Documentation</h3>
+          <p>Read our comprehensive user guide</p>
+          <button id="view-docs-btn" class="action-btn">View Docs</button>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I add a new bill?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Go to the Bills page and click "Add Bill". Fill in the bill details including name, amount, due date, and category. Click "Save" to add it to your bills list.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I add a credit card?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Navigate to Credit Cards → Add Card. Enter your card details including company, number, holder name, expiry date, and CVV. The card will be securely stored and you can view it in Manage Cards.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I view my spending insights?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Go to Credit Cards → Smart Insights. You can view spending patterns by category and vendor, with interactive charts. Use the month/year filter to see data for specific periods.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I check my credit card statements?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Visit Credit Cards → View Statements. Select the year and month, then click "Get Statement" to see all transactions for that period.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is my financial data secure?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we use industry-standard encryption to protect your data. All sensitive information is encrypted and stored securely. We never share your personal or financial information with third parties.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I delete a bill or credit card?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>For bills: Go to the Bills page, find the bill you want to delete, and click the "Delete" button. For credit cards: Go to Credit Cards → Manage Cards and click "Delete" on the card you want to remove.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-section" id="contact-section" style="display: none;">
+        <h2>Contact Us</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <select id="contact-subject" required>
+              <option value="">Select a subject</option>
+              <option value="Technical Issue">Technical Issue</option>
+              <option value="Feature Request">Feature Request</option>
+              <option value="Account Help">Account Help</option>
+              <option value="Billing Question">Billing Question</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" rows="5" required placeholder="Describe your issue or question..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot Modal -->
+  <div id="chatbot-modal" class="chatbot-modal">
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+        <h3><i class="fas fa-robot"></i> Credify AI Assistant</h3>
+        <button id="close-chat-btn" class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! I'm your Credify assistant. How can I help you today?</p>
+            <div class="quick-replies">
+              <button class="quick-reply" data-query="Show my bills">Show my bills</button>
+              <button class="quick-reply" data-query="Credit card info">Credit card info</button>
+              <button class="quick-reply" data-query="How to pay">How to pay</button>
+              <button class="quick-reply" data-query="Help me">Help me</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 

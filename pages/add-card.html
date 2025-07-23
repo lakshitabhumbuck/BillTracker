@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credify - Add New Card</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a href="index.html">Home</a> &gt;
+    <a href="credit-cards.html">Credit Cards</a> &gt;
+    <span>Add Card</span>
+  </nav>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.svg" alt="Credify Logo" height="32">
+      <span>Credify</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="bills.html">Bills</a></li>
+      <li><a href="credit-cards.html" class="active">Credit Cards</a></li>
+      <li><a href="smart-insights.html">Insights</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="help-support.html">Help & Support</a></li>
+    </ul>
+    <div class="navbar-user">
+      <a href="index.html" class="back-home-link">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <div class="add-card-container">
+      <div class="add-card-form-wrapper">
+        <div class="card-preview-container">
+          <div class="card-preview" id="card-preview">
+            <div class="card-preview-front">
+              <div class="card-chip"></div>
+              <div class="card-logo" id="card-logo"></div>
+              <div class="card-number-preview" id="card-number-preview">#### #### #### ####</div>
+              <div class="card-holder-preview-wrapper">
+                <span class="card-label">Card Holder</span>
+                <span id="card-holder-preview">YOUR NAME</span>
+              </div>
+              <div class="card-expiry-preview-wrapper">
+                <span class="card-label">Expires</span>
+                <span id="card-expiry-preview">MM/YY</span>
+              </div>
+            </div>
+            <div class="card-preview-back">
+              <div class="card-mag-stripe"></div>
+              <div class="card-cvv-box">
+                <span class="card-label">CVV</span>
+                <span id="card-cvv-preview"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="add-card-form" id="add-card-form">
+          <div class="form-group">
+            <label for="card-company-input">Card Company</label>
+            <select id="card-company-input" required>
+              <option value="">Select Company</option>
+              <option value="Visa">Visa</option>
+              <option value="Mastercard">Mastercard</option>
+              <option value="Rupay">Rupay</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="card-number-input">Card Number</label>
+            <input type="text" id="card-number-input" maxlength="19" required>
+          </div>
+          <div class="form-group">
+            <label for="card-holder-input">Card Holder</label>
+            <input type="text" id="card-holder-input" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group expiry-group">
+              <label>Expiration Date</label>
+              <div class="expiry-inputs">
+                <select id="expiry-month-input" required>
+                  <option value="">Month</option>
+                  <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option>
+                  <option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option>
+                  <option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                </select>
+                <select id="expiry-year-input" required>
+                  <option value="">Year</option>
+                  <!-- Years will be populated by JS -->
+                </select>
+              </div>
+            </div>
+            <div class="form-group cvv-group">
+              <label for="card-cvv-input">CVV</label>
+              <input type="text" id="card-cvv-input" maxlength="4" required>
+            </div>
+          </div>
+          <button type="submit" class="submit-card-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 
